@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>R-dent Tasks — Admin</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="admin-header">
+    <h1>R-dent Task Tracker</h1>
+    <div class="subtitle">Manager Accountability Dashboard</div>
+  </header>
+
+  <nav class="admin-nav">
+    <button class="active" data-view="today">Today</button>
+    <button data-view="history">History</button>
+    <button data-view="stats">Stats</button>
+  </nav>
+
+  <div class="admin-content">
+    <div id="escalation-area"></div>
+    <div id="view-container"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

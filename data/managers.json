@@ -1,0 +1,161 @@
+{
+  "managers": {
+    "tommy": {
+      "name": "Tommy Williams",
+      "department": "Night Manager",
+      "email": "",
+      "tasks": {
+        "daily": [
+          {
+            "id": "production-analysis",
+            "label": "Production Analysis & Review with Technicians",
+            "deadline": "19:00",
+            "reminderBefore": 30,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          },
+          {
+            "id": "cadcam-walkthrough",
+            "label": "Final walk-through CADCAM — check mills, printers, oven, shelves for stuck work",
+            "deadline": null,
+            "reminderBefore": null,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          },
+          {
+            "id": "handoff-cole",
+            "label": "Handoff meeting with Cole — discuss any issues",
+            "deadline": null,
+            "reminderBefore": null,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          }
+        ],
+        "weekly": [
+          {
+            "id": "l10-weekly",
+            "label": "L10 Weekly with team",
+            "requiresTimeEntry": true,
+            "prompt": "What day and time did you hold the L10?"
+          }
+        ]
+      },
+      "endOfDaySweep": "00:00"
+    },
+    "cole": {
+      "name": "Cole",
+      "department": "CADCAM Manager",
+      "email": "",
+      "tasks": {
+        "daily": [
+          {
+            "id": "production-analysis",
+            "label": "Production Analysis & Review with Technicians",
+            "deadline": "09:00",
+            "reminderBefore": 30,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          },
+          {
+            "id": "cadcam-walkthrough",
+            "label": "Final walk-through CADCAM — check mills, printers, ovens, shelves for stuck work & review logistical reports",
+            "deadline": null,
+            "reminderBefore": null,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          },
+          {
+            "id": "handoff-tommy",
+            "label": "Handoff meeting with Tommy — discuss any issues",
+            "deadline": null,
+            "reminderBefore": null,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          }
+        ],
+        "weekly": [
+          {
+            "id": "l10-weekly",
+            "label": "L10 Weekly with team",
+            "requiresTimeEntry": true,
+            "prompt": "What day and time did you hold the L10?"
+          },
+          {
+            "id": "l10-todos-review",
+            "label": "Review & complete any to-dos for Monday L10",
+            "deadline": "Fri EOD",
+            "requiresTimeEntry": false
+          }
+        ]
+      },
+      "endOfDaySweep": "20:00"
+    },
+    "melissa": {
+      "name": "Melissa",
+      "department": "Integrator",
+      "email": "",
+      "tasks": {
+        "daily": [
+          {
+            "id": "production-analysis",
+            "label": "Production Analysis & Review with Technicians",
+            "deadline": "09:00",
+            "reminderBefore": 30,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          }
+        ],
+        "weekly": [
+          {
+            "id": "l10-weekly",
+            "label": "L10 Weekly with team",
+            "requiresTimeEntry": true,
+            "prompt": "What day and time did you hold the L10?"
+          },
+          {
+            "id": "daxton-catchup",
+            "label": "Weekly catch-up meeting with Daxton",
+            "deadline": "Fri AM",
+            "requiresTimeEntry": false
+          },
+          {
+            "id": "l10-todos-review",
+            "label": "Review & complete any to-dos for Monday L10",
+            "deadline": "Fri EOD",
+            "requiresTimeEntry": false
+          }
+        ]
+      },
+      "endOfDaySweep": "20:00"
+    },
+    "greg": {
+      "name": "Greg",
+      "department": "Removable Department Manager",
+      "email": "",
+      "tasks": {
+        "daily": [
+          {
+            "id": "production-analysis",
+            "label": "Production Analysis & Review with Technicians",
+            "deadline": "09:00",
+            "reminderBefore": 30,
+            "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
+          }
+        ],
+        "weekly": [
+          {
+            "id": "l10-weekly",
+            "label": "L10 Weekly with team",
+            "requiresTimeEntry": true,
+            "prompt": "What day and time did you hold the L10?"
+          },
+          {
+            "id": "l10-todos-review",
+            "label": "Review & complete any to-dos for Monday L10",
+            "deadline": "Fri EOD",
+            "requiresTimeEntry": false
+          }
+        ]
+      },
+      "endOfDaySweep": "20:00"
+    }
+  },
+  "admin": {
+    "email": "",
+    "dailySummaryTime": "21:00",
+    "escalationThreshold": 3
+  }
+}

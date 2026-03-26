@@ -1,0 +1,22 @@
+{
+  "name": "R-dent Task Tracker",
+  "short_name": "R-dent Tasks",
+  "description": "Daily & weekly task accountability for R-dent managers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#1a56db",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
