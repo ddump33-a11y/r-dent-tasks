@@ -11,60 +11,68 @@ Node.js task management application for R-dent (dental industry). Uses Express a
 ## Available Skills
 
 ### Core Business Skills
-| Skill | Description |
-|-------|-------------|
-| `executive-brief` | Transforms messy notes/dumps into CEO-level executive briefs |
-| `pl-stress-test` | Ruthless stress-test of P&L data |
-| `sales-rep-coaching` | Structured weekly coaching reports from rep notes/activity |
-| `meeting-action-plan` | Meeting transcripts to structured action plans with owners/dates |
-| `pricing-benchmark` | Compares fee guides against competitor/market pricing |
-| `manager-accountability` | Weekly scorecards for department managers with KPI tracking |
-| `dental-lead-research` | Research/profile dentists, practices, DSOs for outbound sales |
-| `marketing-message` | Dentist-facing marketing copy in R-dent's brand voice |
-| `customer-concentration-analysis` | Revenue by account, concentration risk for PE due diligence |
-| `competitor-price-compare` | Side-by-side pricing vs NDX Green, Dandy, Glidewell |
-| `dso-proposal` | Custom DSO sales proposals with pricing tables and positioning |
-| `cost-reducer` | Cost reduction opportunities across full cost structure |
-| `exit-readiness-scorecard` | Scores exit readiness across EBITDA, revenue quality, SOPs, etc. |
-| `kpi-dashboard-builder` | Formatted weekly/monthly dashboards from raw KPI data |
+| Skill | Trigger Phrases | Description |
+|---|---|---|
+| `executive-brief` | "turn these notes into a brief", "clean this up" | Transforms messy notes, voice memos, meeting dumps into structured CEO-level executive briefs |
+| `pl-stress-test` | "stress test this P&L", "find problems in these numbers" | Reviews P&L data and forces a ruthless stress-test of the numbers |
+| `sales-rep-coaching` | "coaching report", "rep notes", "rep activity" | Converts rep call notes, territory notes, iCortica data into structured weekly coaching reports |
+| `meeting-action-plan` | "turn this into action items", "meeting notes" | Converts meeting transcripts/Fireflies exports into structured action plans with owners and dates |
+| `pricing-benchmark` | "compare this pricing", "are we underpriced" | Compares fee guides against competitor pricing and market benchmarks |
+| `manager-accountability` | "manager scorecard", "weekly accountability" | Builds structured weekly scorecards for department managers with KPI status, misses, root cause |
+| `dental-lead-research` | "research this dentist", "prep for sales call" | Researches and profiles dentists, practices, DSOs for outbound sales |
+| `marketing-message` | "write marketing copy", "draft an email to dentists" | Creates dentist-facing marketing copy in R-dent's brand voice |
+| `customer-concentration-analysis` | "customer concentration", "revenue by account" | Analyzes revenue by account to identify concentration risk for PE due diligence |
+| `competitor-price-compare` | "how do we compare on price", "what does [competitor] charge" | Side-by-side pricing comparisons vs NDX Green, Dandy, Glidewell |
+| `dso-proposal` | "[DSO name] proposal", "pitch deck for [DSO]" | Custom DSO sales proposals with product recs, pricing tables, competitive positioning |
+| `cost-reducer` | "cut costs", "find margin", "where are we wasting money" | Identifies cost reduction opportunities across materials, labor, remakes, vendors, software |
+| `exit-readiness-scorecard` | "exit readiness", "how ready are we to sell" | Scores exit readiness across EBITDA, revenue quality, customer concentration, SOPs, leadership, tech |
+| `kpi-dashboard-builder` | "build a dashboard", "format this KPI data" | Generates formatted weekly/monthly dashboards with trends, RAG status, department breakdowns |
 
 ### AI & Workflow Skills
-| Skill | Description |
-|-------|-------------|
-| `ai-tool-comparison` | Routes tasks to the best AI tool (Claude vs ChatGPT vs Perplexity vs Gemini) |
-| `prompt-master` | Generates optimized prompts for any AI tool |
-| `self-healing` | Detects failures, recovers from errors, improves skills over time |
-| `weekly-review` | Automates Daxton's 20-min weekly review process |
+| Skill | Trigger Phrases | Description |
+|---|---|---|
+| `ai-tool-comparison` | "should I use ChatGPT or Claude", "which AI for this" | Decides whether a task is best handled by Claude, ChatGPT, Perplexity, or Gemini |
+| `prompt-master` | "write a prompt for", "optimize this prompt" | Generates optimized prompts for any AI tool (LLM, Cursor, Midjourney, coding agents, etc.) |
+| `self-healing` | (auto-triggered on failures) | Detects failures, recovers from errors, diagnoses broken workflows, improves skills over time |
+| `weekly-review` | "weekly review", "run my review" | Automates 20-min weekly review — processes inbox, prunes memory, flags contradictions, updates open-loops |
 
 ### Technical / Infrastructure Skills
-| Skill | Description |
-|-------|-------------|
-| `n8n` | Designs/builds/debugs n8n automation workflows |
-| `scalability` | Audits infrastructure, APIs, databases for growth readiness |
-| `security` | Audits security posture (Azure, API keys, Mac Mini, M365, apps) |
-| `claude-api` | Build apps with Claude API / Anthropic SDK |
+| Skill | Trigger Phrases | Description |
+|---|---|---|
+| `n8n` | "build a workflow", "automate this", "connect [system] to [system]" | Designs, builds, debugs n8n automation workflows |
+| `scalability` | "can this scale", "audit our infrastructure" | Audits infrastructure, APIs, databases for growth readiness |
+| `security` | "security audit", "harden our setup" | Audits security posture — Azure App Registration, API keys, Mac Mini, M365, web/desktop apps |
+| `claude-api` | (auto-triggered when code imports anthropic SDK) | Build apps with Claude API, Anthropic SDK, or Agent SDK |
 
 ### Document & File Skills
-| Skill | Description |
-|-------|-------------|
-| `pdf` | Read, merge, split, create, watermark PDFs |
-| `docx` | Create, read, edit Word documents |
-| `pptx` | Create, read, edit PowerPoint presentations |
-| `xlsx` | Open, read, edit, create spreadsheets |
+| Skill | Trigger Phrases | Description |
+|---|---|---|
+| `pdf` | any mention of PDF files | Read, merge, split, create, watermark, extract from PDFs |
+| `docx` | "Word doc", ".docx", "create a document" | Create, read, edit, manipulate Word documents |
+| `pptx` | any mention of .pptx or presentations | Create, read, edit PowerPoint presentations |
+| `xlsx` | any mention of spreadsheet files | Open, read, edit, create spreadsheets (.xlsx, .xlsm, .csv, .tsv) |
 
-### Utility Skills
-| Skill | Description |
-|-------|-------------|
-| `skill-creator` | Create, modify, eval, and benchmark skills |
-| `claude-md-management:revise-claude-md` | Update CLAUDE.md with session learnings |
-| `claude-md-management:claude-md-improver` | Audit and improve CLAUDE.md files |
-| `firecrawl:skill-gen` | Generate a skill from a documentation URL |
-| `firecrawl:firecrawl-cli` | Web scraping, research, crawling |
-| `amazon-location-service` | Maps, geocoding, routing via AWS |
-| `schedule` | Create/manage scheduled remote agents on cron |
-| `loop` | Run a prompt or command on a recurring interval |
-| `simplify` | Review changed code for reuse, quality, efficiency |
-| `update-config` | Configure Claude Code settings/hooks |
+### Utility / Meta Skills
+| Skill | Trigger Phrases | Description |
+|---|---|---|
+| `skill-creator` | "create a skill", "edit this skill", "run evals" | Create, modify, eval, and benchmark skills |
+| `claude-md-management:revise-claude-md` | "update CLAUDE.md" | Update CLAUDE.md with learnings from current session |
+| `claude-md-management:claude-md-improver` | "audit CLAUDE.md", "improve CLAUDE.md" | Audit and improve CLAUDE.md files for quality |
+| `firecrawl:skill-gen` | "generate a skill from this URL" | Generate a complete skill from a documentation URL using Firecrawl |
+| `firecrawl:firecrawl-cli` | any URL, web scraping, research | Web scraping, crawling, research with LLM-optimized output |
+| `amazon-location-service` | "add maps", "geocode", "calculate route" | Maps, geocoding, routing via AWS Amazon Location Service |
+| `schedule` | "schedule a task", "set up a cron job" | Create/manage scheduled remote agents on cron |
+| `loop` | "check every 5 minutes", "poll for status" | Run a prompt or command on a recurring interval |
+| `simplify` | "review this code", "clean this up" | Review changed code for reuse, quality, and efficiency |
+| `update-config` | "configure settings", "set up a hook" | Configure Claude Code harness via settings.json |
+
+## Connected MCP Services
+- **Gmail** — Email read/draft/search
+- **Canva** — Design creation and editing
+- **Vercel** — Deployments and project management
+- **Stripe** — Payments, customers, subscriptions
+- **Fireflies** — Meeting transcripts and summaries
+- **GitHub** — Repos, PRs, issues
 
 ## Key Context
 - **Industry**: Dental lab services
