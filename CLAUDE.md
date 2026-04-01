@@ -33,7 +33,6 @@ Node.js task management application for R-dent (dental industry). Uses Express a
 |-------|-------------|
 | `ai-tool-comparison` | Routes tasks to the best AI tool (Claude vs ChatGPT vs Perplexity vs Gemini) |
 | `prompt-master` | Generates optimized prompts for any AI tool |
-| `know-me` / `session-learning` | Manages memory and session learning |
 | `self-healing` | Detects failures, recovers from errors, improves skills over time |
 | `weekly-review` | Automates Daxton's 20-min weekly review process |
 
