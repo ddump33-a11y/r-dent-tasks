@@ -4,6 +4,10 @@
       "name": "Tommy Williams",
       "department": "Night Manager",
       "email": "tommy@rdentlab.com",
+      "reminderSchedule": {
+        "daily": "23:00",
+        "weekly": "Fri 14:00"
+      },
       "tasks": {
         "daily": [
           {
@@ -43,6 +47,10 @@
       "name": "Cole",
       "department": "CADCAM Manager",
       "email": "cole@rdentlab.com",
+      "reminderSchedule": {
+        "daily": "17:00",
+        "weekly": "Fri 14:00"
+      },
       "tasks": {
         "daily": [
           {
@@ -95,6 +103,10 @@
       "name": "Melissa",
       "department": "Integrator",
       "email": "melissa@rdentlab.com",
+      "reminderSchedule": {
+        "daily": "17:00",
+        "weekly": "Fri 14:00"
+      },
       "tasks": {
         "daily": [
           {
@@ -132,6 +144,10 @@
       "name": "Greg",
       "department": "Removable Department Manager",
       "email": "greg@rdentlab.com",
+      "reminderSchedule": {
+        "daily": "17:00",
+        "weekly": "Fri 14:00"
+      },
       "tasks": {
         "daily": [
           {
@@ -163,6 +179,10 @@
       "name": "Melaine Copeland",
       "department": "Office Manager",
       "email": "melaine@rdentlab.com",
+      "reminderSchedule": {
+        "daily": "17:00",
+        "weekly": "Fri 14:00"
+      },
       "tasks": {
         "daily": [],
         "weekly": [
@@ -180,6 +200,10 @@
       "name": "Bree High",
       "department": "Sales & Marketing Director",
       "email": "bree@rdentlab.com",
+      "reminderSchedule": {
+        "daily": "17:00",
+        "weekly": "Fri 14:00"
+      },
       "tasks": {
         "daily": [],
         "weekly": [
@@ -197,6 +221,10 @@
       "name": "Paula Jackson",
       "department": "HR Manager",
       "email": "paula@rdentlab.com",
+      "reminderSchedule": {
+        "daily": "17:00",
+        "weekly": "Fri 14:00"
+      },
       "tasks": {
         "daily": [],
         "weekly": [
@@ -267,5 +295,15 @@
     "email": "daxton@rdentlab.com",
     "dailySummaryTime": "21:00",
     "escalationThreshold": 3
+  },
+  "reminderDefaults": {
+    "daily": "17:00",
+    "weekly": "Fri 14:00",
+    "method": "gmail_draft",
+    "overrides": {
+      "tommy": {
+        "daily": "23:00"
+      }
+    }
   }
 }
