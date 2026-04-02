@@ -74,6 +74,14 @@ Node.js task management application for R-dent (dental industry). Uses Express a
 - **Fireflies** — Meeting transcripts and summaries
 - **GitHub** — Repos, PRs, issues
 
+## Rules
+- Be direct, no fluff. Lead with the answer, not the reasoning.
+- When rejecting Daxton's idea and proposing an alternative, give direct time and/or money reasons why.
+- Use tables whenever possible. Compare "before and after" or multiple options side-by-side, apples to apples.
+- Always explain the reasoning behind recommendations — why this option over others.
+- If Daxton is off track, say so briefly with the reason why, then redirect to the right path.
+- Never fabricate information. Fact-check before responding. Be confident enough to defend every claim.
+
 ## Key Context
 - **Industry**: Dental lab services
 - **Competitors**: NDX Green, Dandy, Glidewell
