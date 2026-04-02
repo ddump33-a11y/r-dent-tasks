@@ -153,8 +153,60 @@
       "endOfDaySweep": "20:00"
     }
   },
+    "melaine": {
+      "name": "Melaine Copeland",
+      "department": "Office Manager",
+      "email": "melaine@rdentlab.com",
+      "tasks": {
+        "daily": [],
+        "weekly": [
+          {
+            "id": "l10-weekly",
+            "label": "L10 Weekly with team",
+            "requiresTimeEntry": true,
+            "prompt": "What day and time did you hold the L10?"
+          }
+        ]
+      },
+      "endOfDaySweep": "20:00"
+    },
+    "bree": {
+      "name": "Bree High",
+      "department": "Sales & Marketing Director",
+      "email": "bree@rdentlab.com",
+      "tasks": {
+        "daily": [],
+        "weekly": [
+          {
+            "id": "l10-weekly",
+            "label": "L10 Weekly with team",
+            "requiresTimeEntry": true,
+            "prompt": "What day and time did you hold the L10?"
+          }
+        ]
+      },
+      "endOfDaySweep": "20:00"
+    },
+    "paula": {
+      "name": "Paula Jackson",
+      "department": "HR Manager",
+      "email": "paula@rdentlab.com",
+      "tasks": {
+        "daily": [],
+        "weekly": [
+          {
+            "id": "l10-weekly",
+            "label": "L10 Weekly with team",
+            "requiresTimeEntry": true,
+            "prompt": "What day and time did you hold the L10?"
+          }
+        ]
+      },
+      "endOfDaySweep": "20:00"
+    }
+  },
   "admin": {
-    "email": "",
+    "email": "daxton@rdentlab.com",
     "dailySummaryTime": "21:00",
     "escalationThreshold": 3
   }
