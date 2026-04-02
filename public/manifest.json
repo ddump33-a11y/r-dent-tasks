@@ -1,6 +1,6 @@
 {
-  "name": "R-dent Task Tracker",
-  "short_name": "R-dent Tasks",
+  "name": "R-dent Manager Tasks",
+  "short_name": "R-dent Manager Tasks",
   "description": "Daily & weekly task accountability for R-dent managers",
   "start_url": "/",
   "display": "standalone",

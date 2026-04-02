@@ -9,7 +9,7 @@
           {
             "id": "production-analysis",
             "label": "Production Analysis & Review with Technicians",
-            "deadline": "19:00",
+            "deadline": "7:00 PM",
             "reminderBefore": 30,
             "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
           },
@@ -48,7 +48,7 @@
           {
             "id": "production-analysis",
             "label": "Production Analysis & Review with Technicians",
-            "deadline": "09:00",
+            "deadline": "9:00 AM",
             "reminderBefore": 30,
             "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
           },
@@ -79,6 +79,13 @@
             "label": "Review & complete any to-dos for Monday L10",
             "deadline": "Fri EOD",
             "requiresTimeEntry": false
+          },
+          {
+            "id": "oqcam-carbon",
+            "label": "Unzip & load all Oqcam Carbon files into Carbon portal for the week",
+            "deadline": "Fri 12:00 PM",
+            "days": ["Fri"],
+            "requiresTimeEntry": false
           }
         ]
       },
@@ -93,7 +100,7 @@
           {
             "id": "production-analysis",
             "label": "Production Analysis & Review with Technicians",
-            "deadline": "09:00",
+            "deadline": "9:00 AM",
             "reminderBefore": 30,
             "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
           }
@@ -130,7 +137,7 @@
           {
             "id": "production-analysis",
             "label": "Production Analysis & Review with Technicians",
-            "deadline": "09:00",
+            "deadline": "9:00 AM",
             "reminderBefore": 30,
             "days": ["Mon", "Tue", "Wed", "Thu", "Fri"]
           }
@@ -151,8 +158,7 @@
         ]
       },
       "endOfDaySweep": "20:00"
-    }
-  },
+    },
     "melaine": {
       "name": "Melaine Copeland",
       "department": "Office Manager",

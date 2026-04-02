@@ -1,17 +1,12 @@
 {
-  "name": "r-dent-tasks",
+  "name": "r-dent-manager-tasks",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
+    "@vercel/kv": "^3.0.0",
     "express": "^5.2.1",
     "nodemailer": "^8.0.4"
   }

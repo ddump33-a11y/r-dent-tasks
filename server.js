@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3000;
 const DATA_DIR = path.join(__dirname, 'data');
 const LOGS_DIR = path.join(DATA_DIR, 'logs');
 
+const START_DATE = '2026-03-26';
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -163,6 +165,22 @@ app.get('/api/admin/today', (req, res) => {
 app.get('/api/admin/date/:dateStr', (req, res) => {
   const config = loadManagers();
   const dateStr = req.params.dateStr;
+
+  // No data before tracking started
+  if (dateStr < START_DATE) {
+    const results = {};
+    for (const [managerId, manager] of Object.entries(config.managers)) {
+      results[managerId] = {
+        manager: { id: managerId, name: manager.name, department: manager.department },
+        date: dateStr,
+        dayOfWeek: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(dateStr + 'T00:00:00').getDay()],
+        tasks: { daily: [] },
+        beforeStartDate: true
+      };
+    }
+    return res.json(results);
+  }
+
   const log = loadLog(dateStr);
   const dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date(dateStr + 'T00:00:00').getDay()];
   const results = {};
@@ -212,8 +230,9 @@ app.get('/api/admin/stats', (req, res) => {
     const dateStr = d.toISOString().split('T')[0];
     const dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()];
 
-    // Skip weekends
+    // Skip weekends and days before tracking started
     if (dow === 'Sat' || dow === 'Sun') continue;
+    if (dateStr < START_DATE) continue;
 
     const log = loadLog(dateStr);
 
@@ -257,6 +276,7 @@ app.get('/api/admin/streaks', (req, res) => {
       const dateStr = d.toISOString().split('T')[0];
       const dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()];
       if (dow === 'Sat' || dow === 'Sun') continue;
+      if (dateStr < START_DATE) break;
 
       const log = loadLog(dateStr);
       const managerLog = log[managerId] || {};
@@ -310,6 +330,36 @@ app.post('/api/admin/remind/:managerId', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Failed to send email', details: err.message });
   }
+});
+
+// Manager: Daily notes
+app.get('/api/tasks/notes', (req, res) => {
+  const { managerId } = req.query;
+  const today = todayStr();
+  const notesFile = path.join(LOGS_DIR, `notes-${today}-${managerId}.txt`);
+  const notes = fs.existsSync(notesFile) ? fs.readFileSync(notesFile, 'utf8') : '';
+  res.json({ notes });
+});
+
+app.post('/api/tasks/notes', (req, res) => {
+  const { managerId } = req.query;
+  const { notes } = req.body;
+  const today = todayStr();
+  const notesFile = path.join(LOGS_DIR, `notes-${today}-${managerId}.txt`);
+  fs.writeFileSync(notesFile, notes || '');
+  res.json({ success: true });
+});
+
+// Admin: Get all notes for today
+app.get('/api/admin/notes', (req, res) => {
+  const config = loadManagers();
+  const today = todayStr();
+  const results = {};
+  for (const managerId of Object.keys(config.managers)) {
+    const notesFile = path.join(LOGS_DIR, `notes-${today}-${managerId}.txt`);
+    results[managerId] = fs.existsSync(notesFile) ? fs.readFileSync(notesFile, 'utf8') : '';
+  }
+  res.json(results);
 });
 
 // --- Email ---

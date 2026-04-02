@@ -174,10 +174,10 @@ function buildTaskCard(task) {
 
 async function toggleTask(taskId, completed, notes) {
   try {
-    const res = await fetch(`/api/tasks/${managerId}/${taskId}`, {
+    const res = await fetch(`/api/tasks/complete`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ completed, notes: notes || '' })
+      body: JSON.stringify({ managerId, taskId, completed, notes: notes || '' })
     });
 
     if (res.ok) {
@@ -196,5 +196,112 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
+// --- Daily Notes ---
+let notesTimeout = null;
+let isRecording = false;
+let recognition = null;
+
+async function loadNotes() {
+  try {
+    const res = await fetch(`/api/tasks/notes?managerId=${managerId}`);
+    const data = await res.json();
+    const textarea = document.getElementById('daily-notes');
+    if (textarea && data.notes) {
+      textarea.value = data.notes;
+    }
+  } catch (err) {
+    // silent
+  }
+}
+
+async function saveNotes(text) {
+  try {
+    await fetch(`/api/tasks/notes?managerId=${managerId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ notes: text })
+    });
+    showToast('Notes saved');
+  } catch (err) {
+    showToast('Error saving notes');
+  }
+}
+
+function handleNotesInput() {
+  clearTimeout(notesTimeout);
+  notesTimeout = setTimeout(() => {
+    const textarea = document.getElementById('daily-notes');
+    if (textarea) saveNotes(textarea.value);
+  }, 1500);
+}
+
+function toggleVoice() {
+  const micBtn = document.getElementById('mic-btn');
+  const textarea = document.getElementById('daily-notes');
+
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    showToast('Voice input not supported in this browser');
+    return;
+  }
+
+  if (isRecording && recognition) {
+    recognition.stop();
+    return;
+  }
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.lang = 'en-US';
+
+  let finalTranscript = textarea.value;
+  if (finalTranscript && !finalTranscript.endsWith(' ') && !finalTranscript.endsWith('\n')) {
+    finalTranscript += ' ';
+  }
+
+  recognition.onstart = () => {
+    isRecording = true;
+    micBtn.classList.add('recording');
+    micBtn.textContent = 'Stop';
+  };
+
+  recognition.onresult = (event) => {
+    let interim = '';
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      if (event.results[i].isFinal) {
+        finalTranscript += event.results[i][0].transcript;
+      } else {
+        interim += event.results[i][0].transcript;
+      }
+    }
+    textarea.value = finalTranscript + interim;
+  };
+
+  recognition.onend = () => {
+    isRecording = false;
+    micBtn.classList.remove('recording');
+    micBtn.innerHTML = micSvg();
+    textarea.value = finalTranscript;
+    saveNotes(finalTranscript);
+  };
+
+  recognition.onerror = (event) => {
+    isRecording = false;
+    micBtn.classList.remove('recording');
+    micBtn.innerHTML = micSvg();
+    if (event.error !== 'no-speech') {
+      showToast('Voice error: ' + event.error);
+    }
+  };
+
+  recognition.start();
+}
+
+function micSvg() {
+  return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>';
+}
+
 // Init
 loadTasks();
+loadNotes();

@@ -6,3 +6,4 @@ data/sessions/*.json
 data/exports/*
 !data/**/.gitkeep
 .env
+.vercel

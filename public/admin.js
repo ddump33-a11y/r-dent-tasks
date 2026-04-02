@@ -113,6 +113,32 @@ async function renderToday(container) {
     card.appendChild(tasksArea);
     container.appendChild(card);
   }
+
+  // Load notes for today
+  try {
+    const notesRes = await fetch('/api/admin/notes');
+    const notesData = await notesRes.json();
+    for (const [mid, notesText] of Object.entries(notesData)) {
+      if (notesText) {
+        const cards = container.querySelectorAll('.manager-card');
+        const idx = Object.keys(data).indexOf(mid);
+        if (idx >= 0 && cards[idx]) {
+          const notesDiv = document.createElement('div');
+          notesDiv.className = 'admin-notes';
+          const label = document.createElement('div');
+          label.className = 'admin-notes-label';
+          label.textContent = 'Notes';
+          notesDiv.appendChild(label);
+          const text = document.createElement('div');
+          text.textContent = notesText;
+          notesDiv.appendChild(text);
+          cards[idx].appendChild(notesDiv);
+        }
+      }
+    }
+  } catch (err) {
+    // silent
+  }
 }
 
 // --- History View ---
@@ -124,6 +150,7 @@ async function renderHistory(container) {
   const dateInput = document.createElement('input');
   dateInput.type = 'date';
   dateInput.value = new Date().toISOString().split('T')[0];
+  dateInput.min = '2026-03-26';
   pickerRow.appendChild(dateInput);
 
   const loadBtn = document.createElement('button');

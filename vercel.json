@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/m/:path*", "destination": "/index.html" },
+    { "source": "/admin", "destination": "/admin.html" }
+  ]
+}
