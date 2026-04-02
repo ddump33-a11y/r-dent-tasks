@@ -1,6 +1,7 @@
 node_modules/
 data/logs/
 data/memory/*.json
+!data/memory/competitors.json
 data/sessions/*.json
 data/exports/*
 !data/**/.gitkeep

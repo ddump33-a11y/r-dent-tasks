@@ -1,0 +1,80 @@
+{
+  "lastUpdated": "2026-04-02",
+  "competitors": {
+    "dandy": {
+      "name": "Dandy",
+      "type": "Digital-first dental lab / tech platform",
+      "pricing": {
+        "notes": "TODO: Add pricing data",
+        "positioning": "Premium digital, tech-forward pricing"
+      },
+      "scannerPlacement": {
+        "model": "TODO",
+        "strategy": "TODO: Free scanner placement details, lock-in terms",
+        "notes": ""
+      },
+      "employeeSatisfaction": {
+        "glassdoorRating": "TODO",
+        "notes": ""
+      },
+      "management": {
+        "ceo": "TODO",
+        "recentChanges": ""
+      },
+      "strengths": [],
+      "weaknesses": [],
+      "threats": [],
+      "opportunities": []
+    },
+    "glidewell": {
+      "name": "Glidewell",
+      "type": "Full-service mega dental lab",
+      "pricing": {
+        "notes": "TODO: Add pricing data",
+        "positioning": "High volume, competitive pricing"
+      },
+      "scannerPlacement": {
+        "model": "TODO",
+        "strategy": "TODO",
+        "notes": ""
+      },
+      "employeeSatisfaction": {
+        "glassdoorRating": "TODO",
+        "notes": ""
+      },
+      "management": {
+        "ceo": "Jim Glidewell",
+        "recentChanges": ""
+      },
+      "strengths": [],
+      "weaknesses": [],
+      "threats": [],
+      "opportunities": []
+    },
+    "ndx_green": {
+      "name": "NDX Green",
+      "type": "National dental lab network",
+      "pricing": {
+        "notes": "TODO: Add pricing data",
+        "positioning": "Network scale pricing"
+      },
+      "scannerPlacement": {
+        "model": "TODO",
+        "strategy": "TODO",
+        "notes": ""
+      },
+      "employeeSatisfaction": {
+        "glassdoorRating": "TODO",
+        "notes": ""
+      },
+      "management": {
+        "ceo": "TODO",
+        "recentChanges": ""
+      },
+      "strengths": [],
+      "weaknesses": [],
+      "threats": [],
+      "opportunities": []
+    }
+  }
+}

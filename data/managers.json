@@ -3,7 +3,7 @@
     "tommy": {
       "name": "Tommy Williams",
       "department": "Night Manager",
-      "email": "",
+      "email": "tommy@rdentlab.com",
       "tasks": {
         "daily": [
           {
@@ -42,7 +42,7 @@
     "cole": {
       "name": "Cole",
       "department": "CADCAM Manager",
-      "email": "",
+      "email": "cole@rdentlab.com",
       "tasks": {
         "daily": [
           {
@@ -87,7 +87,7 @@
     "melissa": {
       "name": "Melissa",
       "department": "Integrator",
-      "email": "",
+      "email": "melissa@rdentlab.com",
       "tasks": {
         "daily": [
           {
@@ -124,7 +124,7 @@
     "greg": {
       "name": "Greg",
       "department": "Removable Department Manager",
-      "email": "",
+      "email": "greg@rdentlab.com",
       "tasks": {
         "daily": [
           {
