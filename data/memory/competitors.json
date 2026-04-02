@@ -1,80 +1,246 @@
 {
-  "lastUpdated": "2026-04-02",
+  "report": {
+    "title": "Dental Lab Industry Intelligence Report",
+    "date": "March 2026",
+    "preparedBy": "Perplexity Computer",
+    "lastUpdated": "2026-04-02"
+  },
+
+  "marketOverview": {
+    "globalDentalLabMarket2025": "$9.2B",
+    "globalDentalLabMarket2030Projection": "$13.1B",
+    "cagr2025to2030": "7.3%",
+    "usDSOMarket2034Projection": "$196.5B",
+    "dsoCagr": "17.9%",
+    "dsoAffiliationRate2024": "23%",
+    "dsoAffiliationProjected2026": "39%",
+    "dsoMandATransactions2024": "~200",
+    "softwareSegmentCagr": "10.9%",
+    "orthodonticsSegmentCagr": "12.2%",
+    "glidewellDigitalScans2025": "3000000",
+    "glidewellDigitalCaseShare2025": "70%",
+    "glidewellDigitalCaseProjection": "90%+"
+  },
+
   "competitors": {
     "dandy": {
-      "name": "Dandy",
-      "type": "Digital-first dental lab / tech platform",
-      "pricing": {
-        "notes": "TODO: Add pricing data",
-        "positioning": "Premium digital, tech-forward pricing"
+      "founded": 2020,
+      "estimatedRevenue2026": "$175M",
+      "employees": "1000-2000",
+      "employeeRating": 2.7,
+      "employeeReviewCount": 64,
+      "employeeReviewSource": "Indeed, Aug 2025",
+      "scannerProgram": {
+        "model": "Free scanner + minimum monthly lab commitment",
+        "scanner": "Dandy Vision",
+        "scannerLaunchDate": "October 27, 2025",
+        "scanTrainingDataset": "11.5M scans",
+        "ecosystem": "Closed — exclusive to Dandy lab",
+        "companion": "DandyCart (HD touchscreen workstation)",
+        "dandyCartLaunch": "Early 2026"
       },
-      "scannerPlacement": {
-        "model": "TODO",
-        "strategy": "TODO: Free scanner placement details, lock-in terms",
-        "notes": ""
+      "dsoStrategy": {
+        "newDSOsSignedH12025": 80,
+        "namedPartners": [
+          "APEX Dental Partners",
+          "Dental Care Alliance",
+          "SGA Dental Partners (150+ locations)",
+          "My Community Dental Centers"
+        ],
+        "products": ["Dandy Hub", "Dandy Insights"]
       },
-      "employeeSatisfaction": {
-        "glassdoorRating": "TODO",
-        "notes": ""
+      "keyAcquisitions": ["Neem (Dec 2025 — practice management software)"],
+      "keyLaunches2025": [
+        "AI Scan Review (real-time crown prep analysis)",
+        "Live Design Review",
+        "3-Appointment Smile Makeover",
+        "Dandy Hub (DSO portal)",
+        "Dandy Insights (DSO analytics)",
+        "Low Pay/No Pay Dentures (Medicaid/Medicare)",
+        "Dandy Vision scanner",
+        "DandyCart",
+        "2-Visit Dentures",
+        "Neem acquisition"
+      ],
+      "employeeThemes": {
+        "massLayoffs": true,
+        "offshoring": "Design work offshored to Egypt",
+        "managementRating": "Poor — described as disorganized and inexperienced",
+        "workEnvironment": "High surveillance, no talking/music in lab",
+        "compensationNotes": "Benefits strong; base pay and bonus structure criticized"
       },
-      "management": {
-        "ceo": "TODO",
-        "recentChanges": ""
-      },
-      "strengths": [],
-      "weaknesses": [],
-      "threats": [],
-      "opportunities": []
+      "keyStrengths": [
+        "Software platform for DSOs (Hub + Insights)",
+        "Brand momentum",
+        "AI marketing leadership",
+        "Closed ecosystem lock-in"
+      ],
+      "keyWeaknesses": [
+        "Operational instability",
+        "High turnover",
+        "Closed ecosystem risk for dentists",
+        "Offshore quality risk",
+        "Low employee satisfaction"
+      ]
     },
+
     "glidewell": {
-      "name": "Glidewell",
-      "type": "Full-service mega dental lab",
-      "pricing": {
-        "notes": "TODO: Add pricing data",
-        "positioning": "High volume, competitive pricing"
+      "founded": "1970s",
+      "monthlyOutput": "500000+ units",
+      "activeAccounts": "88000+",
+      "employeeRating": 3.2,
+      "employeeReviewCount": 399,
+      "employeeReviewSource": "Indeed, Oct 2025",
+      "scannerProgram": {
+        "model": "Paid scanner bundle (Medit-based) — open ecosystem",
+        "brand": "fastscan.io",
+        "openSystem": true,
+        "bundles": [
+          { "model": "i900 Mobility (Wireless)", "scannerOnly": "$21,999", "fullBundle": "$23,999", "notes": "Wi-Fi 6E + Bluetooth, 10-bit, 321g" },
+          { "model": "i900 Classic (Wired)", "scannerOnly": "$18,999", "fullBundle": "$20,999", "notes": "Most compact wand 165g, 10-bit" },
+          { "model": "i900 (Wireless)", "scannerOnly": "$18,999", "fullBundle": "$20,999", "notes": "60GHz wireless, full color capture" },
+          { "model": "i700 Wireless", "scannerOnly": "$15,500", "fullBundle": "$18,500", "notes": "Wireless, 8-bit, proven Medit platform" },
+          { "model": "i700 (Wired)", "scannerOnly": "$13,500", "fullBundle": "$14,990", "notes": "Entry point, wired, 8-bit, lightweight" }
+        ],
+        "bundleIncludes": ["Cart", "Laptop", "Monitor", "Free unlimited training & support (Mon-Fri 5am-5pm PT)"],
+        "labIncentive": "$20+ savings per unit on BruxZir Zirconia model-free cases submitted to Glidewell",
+        "roiClaim": "Pays for itself at just 7 crowns/month"
       },
-      "scannerPlacement": {
-        "model": "TODO",
-        "strategy": "TODO",
-        "notes": ""
+      "dsoStrategy": {
+        "approach": "Education + relationship-based",
+        "dsoProgramDirector": "Bruce Tuck, Director of DSO Sales & Strategic Marketing",
+        "annualDSOSummit": {
+          "3rd": "August 1, 2025 — 200+ executives, invitation-only, sold out",
+          "4th": "July 31, 2026"
+        },
+        "namedPartners": ["My Community Dental Centers (15 centers, fastscan.io deployment)"]
       },
-      "employeeSatisfaction": {
-        "glassdoorRating": "TODO",
-        "notes": ""
+      "stats2025": {
+        "unitsDelivered": "6M+",
+        "activeAccounts": "88000+",
+        "digitalScansReceived": "3M",
+        "newAccountsAdded": "11000+",
+        "accountsAddedNewServiceLine": "33000+",
+        "campusVisitorsCE": "4000+"
       },
-      "management": {
-        "ceo": "Jim Glidewell",
-        "recentChanges": ""
+      "keyLaunches2025": [
+        "Next-Day BruxZir",
+        "Glidewell Signature Portal (esthetic cases)",
+        "glidewell.io in-office same-day milling",
+        "9 CE symposia (up to 12 CE hours each)",
+        "3rd Annual DSO Summit"
+      ],
+      "aiProducts": ["CrownAI", "MarginAI", "3D photospectrometer QC"],
+      "contentMarketing": {
+        "glidewellTVHours": "6000+",
+        "youtubeViews": "1.65M"
       },
-      "strengths": [],
-      "weaknesses": [],
-      "threats": [],
-      "opportunities": []
+      "keyStrengths": [
+        "Scale (88K accounts, 6M units/month)",
+        "Open ecosystem messaging",
+        "Vertical integration (manufactures own zirconia, AI software, hardware)",
+        "CE leadership",
+        "50+ year track record"
+      ],
+      "keyWeaknesses": [
+        "Premium scanner pricing",
+        "Less tech-forward AI messaging vs Dandy",
+        "Variable culture by location"
+      ]
     },
-    "ndx_green": {
-      "name": "NDX Green",
-      "type": "National dental lab network",
-      "pricing": {
-        "notes": "TODO: Add pricing data",
-        "positioning": "Network scale pricing"
+
+    "ndx": {
+      "fullName": "National Dentex",
+      "labNetwork": "55+ labs (US)",
+      "dsoPartners": "50+",
+      "employees": "~1500",
+      "employeeRating": 2.6,
+      "employeeReviewCount": 111,
+      "employeeReviewSource": "Indeed, Aug 2025",
+      "breakingNews": {
+        "date": "March 16, 2026",
+        "headline": "Paul Kahn appointed Interim CEO, succeeding Kevin Mosher",
+        "khanJoinedNDX": "May 2025",
+        "khanPriorRole": "Chief Operating, Transformation & Financial Officer",
+        "statedPriorities": [
+          "Accelerate digital transformation",
+          "Maintain customer-centric approach",
+          "Bridge traditional craftsmanship with modern technology"
+        ]
       },
-      "scannerPlacement": {
-        "model": "TODO",
-        "strategy": "TODO",
-        "notes": ""
+      "scannerProgram": {
+        "model": "Scanner-agnostic — no scanner sold",
+        "accepts": "All major intraoral scanner platforms",
+        "support": "Free IOS clinical training from Certified NDX Clinical Trainers",
+        "dedicatedRole": "Director of Intraoral Technology",
+        "focus": "Edentulous scanning for digital dentures, implants, All-on-X"
       },
-      "employeeSatisfaction": {
-        "glassdoorRating": "TODO",
-        "notes": ""
+      "dsoStrategy": {
+        "approach": "Network scale + exclusive pricing",
+        "valueProps": [
+          "Single-source contract across all geographies",
+          "Exclusive DSO pricing across full product catalog",
+          "Programmable digital design to DSO-specific preferences",
+          "Marketing sponsorships for DSO partners"
+        ],
+        "tradeShowPresence": ["Yankee Dental Congress 2026 (sponsor)", "Women in DSO Empower & Grow 2025"]
       },
-      "management": {
-        "ceo": "TODO",
-        "recentChanges": ""
-      },
-      "strengths": [],
-      "weaknesses": [],
-      "threats": [],
-      "opportunities": []
+      "productCatalog": [
+        "Crowns & bridges",
+        "Dentures & partials",
+        "Implant restorations",
+        "Headache therapy",
+        "Sleep medicine",
+        "Retainers",
+        "Aligners"
+      ],
+      "keyStrengths": [
+        "Geographic network (55+ labs)",
+        "Most tenured DSO relationships (50+ DSOs)",
+        "Full product catalog",
+        "National reach with local service",
+        "Single-source pricing for DSOs"
+      ],
+      "keyWeaknesses": [
+        "Interim CEO — strategic uncertainty",
+        "Corporate-to-lab communication gap",
+        "Below-market compensation (retention risk)",
+        "Variable culture across 55+ locations",
+        "Less AI/digital marketing vs competitors"
+      ]
     }
-  }
+  },
+
+  "competitorComparison": {
+    "employeeRatings": {
+      "dandy": 2.7,
+      "glidewell": 3.2,
+      "ndx": 2.6
+    },
+    "scannerModels": {
+      "dandy": "Free proprietary scanner (closed ecosystem, lab commitment required)",
+      "glidewell": "Paid Medit-based bundles $14,990-$23,999 (open ecosystem)",
+      "ndx": "Scanner-agnostic, no scanner sold (free IOS training)"
+    },
+    "dsoApproach": {
+      "dandy": "Software platform (Hub + Insights), 80+ new DSOs in H1 2025",
+      "glidewell": "Education + relationships, Annual DSO Summit",
+      "ndx": "Network scale + exclusive pricing, 50+ tenured DSO partners"
+    },
+    "aiInvestment": {
+      "dandy": "AI Scan Review, AI design, 11.5M scan dataset, Dandy Vision AI hardware",
+      "glidewell": "CrownAI, MarginAI, 3D photospectrometer QC",
+      "ndx": "Digital workflows, CAD/CAM — less public AI marketing"
+    }
+  },
+
+  "strategicTakeaways": [
+    "Scanner war is now a platform war — Dandy building closed ecosystem to make switching cost-prohibitive",
+    "39% of US dental offices projected DSO-affiliated by 2026 — DSO strategy is now table stakes",
+    "7-day crown is considered slow — Glidewell Next-Day BruxZir sets new turnaround benchmark",
+    "NDX interim CEO appointment (March 16 2026) = window of opportunity for competitors",
+    "Dandy (2.7) and NDX (2.6) low employee ratings = quality and consistency vulnerability",
+    "AI and digital credentials are now marketing necessities — labs without a digital story appear outdated",
+    "11,000+ new accounts chose Glidewell in 2025 — dentists are actively switching labs"
+  ]
 }
