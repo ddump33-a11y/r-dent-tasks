@@ -73,8 +73,10 @@ function getManagerTasks(managerId) {
       notes: managerLog[t.id] ? managerLog[t.id].notes : ''
     }));
 
-  // Weekly tasks — check all days this week for completion
-  const weeklyTasks = (manager.tasks.weekly || []).map(t => {
+  // Weekly tasks — check all days this week for completion, filter by day if specified
+  const weeklyTasks = (manager.tasks.weekly || [])
+    .filter(t => !t.days || t.days.includes(dow))
+    .map(t => {
     let completed = false;
     let completedAt = null;
     let notes = '';

@@ -22,9 +22,12 @@ module.exports = async function handler(req, res) {
       notes: managerLog[t.id] ? managerLog[t.id].notes : ''
     }));
 
-  // Weekly tasks — check all days this week
+  // Weekly tasks — check all days this week, filter by day if specified
   const weeklyTasks = [];
   for (const t of (manager.tasks.weekly || [])) {
+    // Skip weekly tasks that have day-of-week restrictions and today isn't one of those days
+    if (t.days && !t.days.includes(dow)) continue;
+
     let completed = false, completedAt = null, notes = '';
 
     for (let i = 0; i < 7; i++) {
