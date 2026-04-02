@@ -97,6 +97,7 @@ const MANAGERS = {
     name: "Amy Everitt",
     department: "Field Sales Representative",
     email: "",
+    startDate: "2026-04-02",
     tasks: {
       daily: [
         { id: "offices-visited", label: "Offices visited today", days: ["Mon","Tue","Wed","Thu"], requiresTimeEntry: true, prompt: "How many offices did you visit today?" },

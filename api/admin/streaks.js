@@ -12,8 +12,9 @@ module.exports = async function handler(req, res) {
       d.setDate(d.getDate() - i);
       const dateStr = d.toISOString().split('T')[0];
 
-      // Don't count days before tracking started
-      if (dateStr < START_DATE) break;
+      // Don't count days before tracking started (per-manager or global)
+      const mgrStart = manager.startDate || START_DATE;
+      if (dateStr < mgrStart) break;
 
       const dow = dayOfWeek(dateStr);
       if (dow === 'Sat' || dow === 'Sun') continue;

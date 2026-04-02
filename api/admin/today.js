@@ -9,6 +9,19 @@ module.exports = async function handler(req, res) {
   const results = {};
 
   for (const [managerId, manager] of Object.entries(MANAGERS)) {
+    // Skip managers who haven't started yet
+    if (manager.startDate && today < manager.startDate) {
+      results[managerId] = {
+        manager: { id: managerId, name: manager.name, department: manager.department },
+        date: today,
+        dayOfWeek: dow,
+        weekStart,
+        tasks: { daily: [], weekly: [] },
+        beforeStartDate: true
+      };
+      continue;
+    }
+
     const managerLog = log[managerId] || {};
 
     const dailyTasks = (manager.tasks.daily || [])

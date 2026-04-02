@@ -29,6 +29,10 @@ module.exports = async function handler(req, res) {
     const log = await loadLog(dateStr);
 
     for (const [managerId, manager] of Object.entries(MANAGERS)) {
+      // Skip days before this manager's start date
+      const mgrStart = manager.startDate || START_DATE;
+      if (dateStr < mgrStart) continue;
+
       const managerLog = log[managerId] || {};
       const applicableTasks = (manager.tasks.daily || []).filter(t => !t.days || t.days.includes(dow));
       const total = applicableTasks.length;
