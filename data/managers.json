@@ -206,14 +206,7 @@
       },
       "tasks": {
         "daily": [],
-        "weekly": [
-          {
-            "id": "l10-weekly",
-            "label": "L10 Weekly with team",
-            "requiresTimeEntry": true,
-            "prompt": "What day and time did you hold the L10?"
-          }
-        ]
+        "weekly": []
       },
       "endOfDaySweep": "20:00"
     },
@@ -227,14 +220,7 @@
       },
       "tasks": {
         "daily": [],
-        "weekly": [
-          {
-            "id": "l10-weekly",
-            "label": "L10 Weekly with team",
-            "requiresTimeEntry": true,
-            "prompt": "What day and time did you hold the L10?"
-          }
-        ]
+        "weekly": []
       },
       "endOfDaySweep": "20:00"
     },
