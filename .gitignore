@@ -1,6 +1,6 @@
 node_modules/
 data/logs/
-data/memory/*.json
+# data/memory/*.json — un-ignored so memory syncs across devices
 !data/memory/competitors.json
 data/sessions/*.json
 data/exports/*
