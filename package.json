@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "gmail:reorg": "node scripts/gmail-reorg/reorg.js",
+    "gmail:reorg:execute": "node scripts/gmail-reorg/reorg.js --execute"
   },
   "dependencies": {
     "@vercel/kv": "^3.0.0",
     "express": "^5.2.1",
+    "googleapis": "^144.0.0",
     "nodemailer": "^8.0.4"
   }
 }

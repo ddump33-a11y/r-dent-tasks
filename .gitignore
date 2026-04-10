@@ -8,3 +8,8 @@ data/exports/*
 !data/**/.gitkeep
 .env
 .vercel
+
+# Gmail reorg — secrets & generated output
+scripts/gmail-reorg/.gmail-credentials.json
+scripts/gmail-reorg/.gmail-token.json
+scripts/gmail-reorg/unsubscribe-report.html
