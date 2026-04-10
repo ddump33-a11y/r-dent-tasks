@@ -67,12 +67,24 @@ Node.js task management application for R-dent (dental industry). Uses Express a
 | `update-config` | "configure settings", "set up a hook" | Configure Claude Code harness via settings.json |
 
 ## Connected MCP Services
-- **Gmail** — Email read/draft/search
-- **Canva** — Design creation and editing
-- **Vercel** — Deployments and project management
-- **Stripe** — Payments, customers, subscriptions
+
+### Zapier MCP Server
+- **Microsoft Teams** (20 tools) — Chat, channels, messages, team management
+- **OneDrive** (8 tools) — File storage, sharing, document management
+- **Microsoft Excel** (17 tools) — Spreadsheet read/write/update
+- **Microsoft Outlook** (31 tools) — Email, calendar, contacts
+- **Gmail** (12 tools) — Email read/draft/search
+- **PostHog** (1 tool) — Product analytics events
+- **Google Analytics 4** (6 tools) — Website/marketing analytics
+- **Google Ads** (11 tools) — Ad campaigns, reporting, management
+- **Stripe** (21 tools) — Payments, customers, subscriptions
+- **Microsoft To Do** (5 tools) — Task lists, reminders
+
+### Direct MCP Connections
 - **Fireflies** — Meeting transcripts and summaries
 - **GitHub** — Repos, PRs, issues
+- **Calendly** — Scheduling, event types, availability
+- **Supabase** — Database, edge functions, migrations
 
 ## Rules
 - Be direct, no fluff. Lead with the answer, not the reasoning.
