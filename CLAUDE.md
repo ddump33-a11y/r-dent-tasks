@@ -74,6 +74,40 @@ Node.js task management application for R-dent (dental industry). Uses Express a
 - **Fireflies** — Meeting transcripts and summaries
 - **GitHub** — Repos, PRs, issues
 
+## Claude Tools Daxton Uses (know what each can do)
+
+Daxton works across three Anthropic products. Know the difference so you route requests correctly.
+
+### Claude Code (this environment)
+- CLI + IDE + web. What you're running in right now.
+- Best for: coding, git-tracked changes, repo work, architectural decisions, anything that should land on a branch.
+- Gmail MCP here is **read-only** — can search/read/draft, cannot create labels/filters or modify threads. Use the `scripts/gmail-reorg/` Node.js script for write operations.
+- Has a full read/write GitHub MCP scoped to `ddump33-a11y/r-dent-tasks`.
+
+### Claude Cowork (GA April 2026, macOS + Windows)
+- Agentic desktop assistant. Included with Claude Pro ($20/mo) and Max ($100/$200/mo). Max 5x = $100, Max 20x = $200. Usage resets every 5 hours, not daily.
+- Runs on Daxton's Mac directly — **can control the desktop, read/write local files without upload, drive apps and browsers**, execute code in a VM.
+- Organized into **Projects** with their own files, context, instructions, and memory.
+- **MCP connectors** with granular per-tool permissions (admin can allow Gmail-read but block Gmail-send, etc.). Zoom MCP connector is built in.
+- Has a **Dispatch** feature — assign tasks from phone, come back to find them done on desktop.
+- Best for: Daxton delegating end-to-end tasks to an agent that literally clicks through apps. Better than Claude Code for ongoing tweaks to Gmail, local file ops, or anything that spans multiple desktop apps.
+- Daxton should point Cowork at `~/Desktop/r-dent-tasks/scripts/gmail-reorg/` (config.js + README) so it reuses the existing script + saved OAuth token for Gmail changes instead of freelancing.
+- Caveats: consumes more tokens than regular chat (hits limits faster on Pro), no free trial, Enterprise bills tokens on top of seat cost.
+
+### Claude.ai (web chat)
+- Browser interface. Includes Projects, Artifacts, Skills.
+- Best for: one-off questions, writing, research, image/doc analysis. No persistent filesystem or desktop access.
+
+### Routing guide — which to use when
+| Request | Tool |
+|---|---|
+| "Add a Gmail filter for X" | **Cowork** (runs the script locally; no need to push through git) |
+| "Rewrite the label hierarchy" | **Claude Code** (architectural change, wants versioned config) |
+| "Summarize this PDF" | **Claude.ai** |
+| "Fix a bug in server.js" | **Claude Code** |
+| "Rename 100 files on my Mac" | **Cowork** |
+| "Draft a marketing email" | **Claude.ai** or **Cowork** |
+
 ## Rules
 - Be direct, no fluff. Lead with the answer, not the reasoning.
 - When rejecting Daxton's idea and proposing an alternative, give direct time and/or money reasons why.
