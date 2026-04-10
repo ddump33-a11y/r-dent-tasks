@@ -205,4 +205,13 @@ module.exports = {
     'noreply@hello.chamberlain.com',
     'newsletters@e.trekbikes.com',
   ],
+  // ──────────────────────────────────────────────────────────
+  // 7. ARCHIVE LABELS — remove INBOX from all messages in these labels.
+  // Nothing deleted, just archived. Messages stay in the label and are searchable.
+  // ──────────────────────────────────────────────────────────
+  labelsToArchive: [
+    'Newsletters',
+    'Newsletters/Retail',
+    'Newsletters/AI Industry',
+  ],
 };

@@ -49,6 +49,7 @@ async function main() {
   if (ONLY === 'all' || ONLY === 'merges')  await phaseMergeLabels(gmail, labelMap);
   if (ONLY === 'all' || ONLY === 'filters') await phaseCreateFilters(gmail, labelMap);
   if (ONLY === 'all' || ONLY === 'retro')   await phaseRetroactive(gmail, labelMap);
+  if (ONLY === 'archive')                   await phaseArchiveLabels(gmail, labelMap);
   if (ONLY === 'all' || ONLY === 'unsubs')  await phaseUnsubscribeReport(gmail);
 
   console.log(`\n${DRY_RUN ? '(dry run complete — re-run with --execute to apply)' : '✓ Reorg complete.'}\n`);
@@ -193,6 +194,20 @@ async function phaseRetroactive(gmail, labelMap) {
     action(`retro-relabel ${msgIds.length} msgs: ${f.query}`);
     if (!DRY_RUN) {
       await batchModify(gmail, msgIds, { addLabelIds, removeLabelIds });
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+async function phaseArchiveLabels(gmail, labelMap) {
+  log.header('PHASE — Archive messages in specified labels (remove INBOX only)');
+  for (const labelName of config.labelsToArchive || []) {
+    if (!labelMap[labelName]) { log.skip(`label not found: ${labelName}`); continue; }
+    const ids = await searchAllMessages(gmail, `label:"${labelName}" in:inbox`);
+    if (ids.length === 0) { log.skip(`"${labelName}" — nothing in inbox`); continue; }
+    action(`archive ${ids.length} messages from "${labelName}"`);
+    if (!DRY_RUN) {
+      await batchModify(gmail, ids, { removeLabelIds: ['INBOX'] });
     }
   }
 }
