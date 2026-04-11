@@ -43,6 +43,7 @@ Node.js task management application for R-dent (dental industry). Uses Express a
 | `scalability` | "can this scale", "audit our infrastructure" | Audits infrastructure, APIs, databases for growth readiness |
 | `security` | "security audit", "harden our setup" | Audits security posture — Azure App Registration, API keys, Mac Mini, M365, web/desktop apps |
 | `claude-api` | (auto-triggered when code imports anthropic SDK) | Build apps with Claude API, Anthropic SDK, or Agent SDK |
+| `notebooklm` | "/notebooklm", "create a podcast about", "generate a quiz from", "turn this into an audio overview", "mind map of" | Programmatic Google NotebookLM via the `notebooklm-py` CLI/API — create notebooks, add sources (URLs, PDFs, YouTube, Drive), chat, and generate/download audio, video, slide decks, reports, quizzes, flashcards, infographics, mind maps, data tables |
 
 ### Document & File Skills
 | Skill | Trigger Phrases | Description |
