@@ -5,6 +5,10 @@ data/logs/
 data/sessions/*.json
 data/exports/*
 !data/exports/q1-2026-financial-summary.md
+!data/exports/payroll-runrate.xlsx
+!data/exports/RdentQAMaster_VersionFQC_updated.xlsx
+!data/exports/Rdent_FAQ_Master_Sheet_updated.xlsx
+!data/exports/rdent-fee-guide.md
 !data/**/.gitkeep
 .env
 .vercel
