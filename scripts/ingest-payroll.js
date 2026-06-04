@@ -4,6 +4,11 @@
 const xlsx = require('xlsx');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
+
+function git(cmd) {
+  return execSync(`git ${cmd}`, { cwd: path.join(__dirname, '..'), encoding: 'utf8' }).trim();
+}
 
 const filePath = process.argv[2];
 
@@ -132,3 +137,16 @@ console.log(`\n✓ JSON saved:     ${jsonOut}`);
 console.log(`✓ Summary saved:  ${mdOut}`);
 console.log(`\nTotals: ${totals.headcount} employees | ${totals.hours}h | $${totals.dollars.toLocaleString()}`);
 console.log(`OT rate: ${otRate}%`);
+
+// Commit and push to repo
+console.log('\nSyncing to repo...');
+try {
+  git('pull --rebase origin main');
+  git(`add data/memory/payroll-${periodDate}.json data/exports/payroll-summary-${periodDate}.md`);
+  git(`commit -m "Payroll data for period ending ${periodDate}"`);
+  git('push origin HEAD');
+  console.log('✓ Pushed to repo');
+} catch (err) {
+  console.error('Git sync failed — files saved locally but not pushed.');
+  console.error(err.message);
+}
