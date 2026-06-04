@@ -74,6 +74,15 @@ Node.js task management application for R-dent (dental industry). Uses Express a
 - **Fireflies** — Meeting transcripts and summaries
 - **GitHub** — Repos, PRs, issues
 
+## Automatic Routines
+
+### Payroll Ingest (bi-weekly)
+If Daxton drops a file matching `*Employee_Labor_Detail*.xlsx` into the session — with no message — automatically run:
+```
+node scripts/ingest-payroll.js /path/to/dropped/file.xlsx
+```
+No confirmation needed. Parse it, save the data, commit, and push. Then reply with a one-paragraph summary of the results (total cost, headcount, OT rate, any flags).
+
 ## Rules
 - Be direct, no fluff. Lead with the answer, not the reasoning.
 - When rejecting Daxton's idea and proposing an alternative, give direct time and/or money reasons why.
