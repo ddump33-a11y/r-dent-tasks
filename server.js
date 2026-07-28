@@ -13,8 +13,12 @@ const START_DATE = '2026-03-26';
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Ensure logs directory exists
-if (!fs.existsSync(LOGS_DIR)) fs.mkdirSync(LOGS_DIR, { recursive: true });
+// Ensure logs directory exists (best-effort — read-only filesystem on Vercel/Lambda; KV is the real data store)
+try {
+  if (!fs.existsSync(LOGS_DIR)) fs.mkdirSync(LOGS_DIR, { recursive: true });
+} catch (err) {
+  console.warn('LOGS_DIR not writable (expected on serverless):', err.message);
+}
 
 // --- Helpers ---
 
@@ -48,7 +52,11 @@ function loadLog(dateStr) {
 }
 
 function saveLog(dateStr, data) {
-  fs.writeFileSync(path.join(LOGS_DIR, `${dateStr}.json`), JSON.stringify(data, null, 2));
+  try {
+    fs.writeFileSync(path.join(LOGS_DIR, `${dateStr}.json`), JSON.stringify(data, null, 2));
+  } catch (err) {
+    console.warn('saveLog: local file write skipped (read-only filesystem):', err.message);
+  }
 }
 
 function getManagerTasks(managerId) {
@@ -348,7 +356,11 @@ app.post('/api/tasks/notes', (req, res) => {
   const { notes } = req.body;
   const today = todayStr();
   const notesFile = path.join(LOGS_DIR, `notes-${today}-${managerId}.txt`);
-  fs.writeFileSync(notesFile, notes || '');
+  try {
+    fs.writeFileSync(notesFile, notes || '');
+  } catch (err) {
+    console.warn('notes: local file write skipped (read-only filesystem):', err.message);
+  }
   res.json({ success: true });
 });
 
