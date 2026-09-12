@@ -93,24 +93,6 @@ const MANAGERS = {
       ]
     }
   },
-  amy: {
-    name: "Amy Everitt",
-    department: "Field Sales Representative",
-    email: "",
-    startDate: "2026-04-02",
-    tasks: {
-      daily: [
-        { id: "offices-visited", label: "Offices visited today", days: ["Mon","Tue","Wed","Thu"], requiresTimeEntry: true, prompt: "How many offices did you visit today?" },
-        { id: "areas-hit", label: "Areas covered today", days: ["Mon","Tue","Wed","Thu"], requiresTimeEntry: true, prompt: "What areas did you hit today?" }
-      ],
-      weekly: [
-        { id: "weekly-office-total", label: "Weekly office visit total (Mon–Thu)", days: ["Fri"], requiresTimeEntry: true, prompt: "Total offices visited this week" },
-        { id: "new-doctors", label: "New doctors gained this week", days: ["Fri"], requiresTimeEntry: true, prompt: "How many new doctors this week?" },
-        { id: "next-week-plans", label: "Plans for next week sent to Daxton", days: ["Fri"], requiresTimeEntry: false },
-        { id: "loops-closed", label: "Loops for week closed up", days: ["Fri"], requiresTimeEntry: false }
-      ]
-    }
-  }
 };
 
 const START_DATE = '2026-03-26';
